@@ -9,7 +9,30 @@ Al ser un API Stateless el mismo actua como un proxy contra los servicios del MH
 
 El API se compone de servicios los cuales se clasifican en Operativos y Utilitarios.
 
- Markup : * Bullet list
-              * Nested bullet
-                  * Sub-nested bullet etc
-          * Bullet list item 2
+## Operativos
+Los servicios operatvios abstraen toda la logica necesaria de enviar y consultar un documento fiscal desde/hacia el MH, encapsulan toda la logica en un simple llamado REST, dichos servicios son los siguientes:
+
+-Enviar un documento hacia el MH
+-Consultar el estado del documento por el consecutivo suministrado por el MH (/reception/{numeroComprobante}).
+
+Además de poder consumir estos servicios operativos “completos”, se pueden consumir las partes que lo componen de forma individual, que son los siguientes servicios:
+
+-Firmar un documento fiscal. (/in-memory/sign-document)
+-Validacion de un documento fiscal (validación tanto en estructura como en calidad de los datos).
+-Validar credenciales (/validate/credentials).
+-Validar certicado (/pendiente).
+-Obtener la informacion de un cetificado (/certificate-information).
+
+## Utilitarios
+Los servicios utilitarios permiten consumir una variedad de funcionalidades las cuales suelen ser muy útiles a la hora de trabajar con documentos fiscales con el MH; algunos de estos servicios son los siguientes:
+
+-Tipo de cambio (obtenido diariamente desde el Banco Central de Costa Rica).
+-Distribucion territorial de Costa Rica (Catalogo de Provincias, cantones y distritos).
+-Consultas al patron electoral por cedula fisica nacional.
+-Consultas a catalogos tipo “ENUMS“ definidos por el MH como:
+-Tipo de identificación
+-Actividades economicas
+-Tipos de documentos fiscales
+
+## Postman Collection
+Aca esta la colección en Postman para su uso, https://www.getpostman.com/collections/2f073a796fa4fd68a9f5.
