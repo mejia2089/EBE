@@ -42,3 +42,9 @@ Aca esta la colección en Postman para su uso, https://www.getpostman.com/collec
 | ------------- | ------------- |
 | https://gateway.dev.factura-e.cr/catalog/api/  | Desarrollo / Pruebas  |
 | https://gateway.factura-e.cr/catalog/api/ | Producción  |
+
+## Servicios "All-in-One"
+|Recurso | Verbo |Descripción|
+| ------------- | ------------- |-------------|
+| https://gateway.dev.factura-e.cr/dss/api/in-memory/sign-document | POST |Enviar documento |
+| https://gateway.dev.factura-e.cr/invoice/api/reception/{consecutivo}| GET  |Obtener documento|
