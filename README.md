@@ -9,11 +9,23 @@ Al ser un API Stateless el mismo actua como un proxy contra los servicios del MH
 
 El API se compone de servicios los cuales se clasifican en Operativos y Utilitarios.
 
+## Ambientes
+|Recurso | Descripción |
+| ------------- | ------------- |
+| https://gateway.dev.factura-e.cr/catalog/api/  | Desarrollo / Pruebas  |
+| https://gateway.factura-e.cr/catalog/api/ | Producción  |
+
 ## Operativos
 Los servicios operatvios abstraen toda la logica necesaria de enviar y consultar un documento fiscal desde/hacia el MH, encapsulan toda la logica en un simple llamado REST, dichos servicios son los siguientes:
 
 -Enviar un documento hacia el MH
 -Consultar el estado del documento por el consecutivo suministrado por el MH (/reception/{numeroComprobante}).
+
+## Servicios "All-in-One"
+|Recurso | Verbo |Descripción|
+| ------------- | ------------- |-------------|
+| https://gateway.dev.factura-e.cr/dss/api/in-memory/sign-document | POST |Enviar documento |
+| https://gateway.dev.factura-e.cr/invoice/api/reception/{consecutivo}| GET  |Obtener documento|
 
 Además de poder consumir estos servicios operativos “completos”, se pueden consumir las partes que lo componen de forma individual, que son los siguientes servicios:
 
@@ -22,6 +34,14 @@ Además de poder consumir estos servicios operativos “completos”, se pueden 
 -Validar credenciales (/validate/credentials).
 -Validar certicado (/pendiente).
 -Obtener la informacion de un cetificado (/certificate-information).
+
+
+## Servicios "Parciales" (Opcionales)
+|Recurso | Verbo |Descripción|
+| ------------- | ------------- |-------------|
+| https://gateway.dev.factura-e.cr/dss/api/in-memory/sign-document| POST |Firmar documento |
+| https://gateway.dev.factura-e.cr/dss/api/certificate-information| POST  |Obtener información del certificado|
+| https://gateway.dev.factura-e.cr/invoice/api/validate/credentials| POST  |Validar credenciales de hacienda|
 
 ## Utilitarios
 Los servicios utilitarios permiten consumir una variedad de funcionalidades las cuales suelen ser muy útiles a la hora de trabajar con documentos fiscales con el MH; algunos de estos servicios son los siguientes:
@@ -34,33 +54,12 @@ Los servicios utilitarios permiten consumir una variedad de funcionalidades las 
 -Actividades economicas
 -Tipos de documentos fiscales
 
-## Postman Collection
-Aca esta la colección en Postman para su uso, https://www.getpostman.com/collections/2f073a796fa4fd68a9f5.
-
-## Ambientes
-|Recurso | Descripción |
-| ------------- | ------------- |
-| https://gateway.dev.factura-e.cr/catalog/api/  | Desarrollo / Pruebas  |
-| https://gateway.factura-e.cr/catalog/api/ | Producción  |
-
-
-## Servicios "All-in-One"
-|Recurso | Verbo |Descripción|
-| ------------- | ------------- |-------------|
-| https://gateway.dev.factura-e.cr/dss/api/in-memory/sign-document | POST |Enviar documento |
-| https://gateway.dev.factura-e.cr/invoice/api/reception/{consecutivo}| GET  |Obtener documento|
-
-
-## Servicios "Parciales" (Opcionales)
-|Recurso | Verbo |Descripción|
-| ------------- | ------------- |-------------|
-| https://gateway.dev.factura-e.cr/dss/api/in-memory/sign-document| POST |Firmar documento |
-| https://gateway.dev.factura-e.cr/dss/api/certificate-information| POST  |Obtener información del certificado|
-| https://gateway.dev.factura-e.cr/invoice/api/validate/credentials| POST  |Validar credenciales de hacienda|
-
 
 ## Servicios "Utilitarios" (Opcionales)
 |Recurso | Verbo |Descripción|
 | ------------- | ------------- |-------------|
 | https://gateway.dev.factura-e.cr/catalog/api/exchange-request-current/318| GET |Obtener tipo de cambio |
 | https://gateway.dev.factura-e.cr/catalog/api/identificationTypeList| GET  | Obtener catalogo de identificacion|
+
+## Postman Collection
+Aca esta la colección en Postman para su uso, https://www.getpostman.com/collections/2f073a796fa4fd68a9f5.
