@@ -43,8 +43,24 @@ Aca esta la colección en Postman para su uso, https://www.getpostman.com/collec
 | https://gateway.dev.factura-e.cr/catalog/api/  | Desarrollo / Pruebas  |
 | https://gateway.factura-e.cr/catalog/api/ | Producción  |
 
+
 ## Servicios "All-in-One"
 |Recurso | Verbo |Descripción|
 | ------------- | ------------- |-------------|
 | https://gateway.dev.factura-e.cr/dss/api/in-memory/sign-document | POST |Enviar documento |
 | https://gateway.dev.factura-e.cr/invoice/api/reception/{consecutivo}| GET  |Obtener documento|
+
+
+## Servicios "Parciales" (Opcionales)
+|Recurso | Verbo |Descripción|
+| ------------- | ------------- |-------------|
+| https://gateway.dev.factura-e.cr/dss/api/in-memory/sign-document| POST |Firmar documento |
+| https://gateway.dev.factura-e.cr/dss/api/certificate-information| POST  |Obtener información del certificado|
+| https://gateway.dev.factura-e.cr/invoice/api/validate/credentials| POST  |Validar credenciales de hacienda|
+
+
+## Servicios "Utilitarios" (Opcionales)
+|Recurso | Verbo |Descripción|
+| ------------- | ------------- |-------------|
+| https://gateway.dev.factura-e.cr/catalog/api/exchange-request-current/318| GET |Obtener tipo de cambio |
+| https://gateway.dev.factura-e.cr/catalog/api/identificationTypeList| GET  | Obtener catalogo de identificacion|
