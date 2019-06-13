@@ -21,7 +21,6 @@ Los servicios operatvios abstraen toda la logica necesaria de enviar y consultar
 -Enviar un documento hacia el MH
 -Consultar el estado del documento por el consecutivo suministrado por el MH (/reception/{numeroComprobante}).
 
-## Servicios "All-in-One"
 |Recurso | Verbo |Descripción|
 | ------------- | ------------- |-------------|
 | https://gateway.dev.factura-e.cr/dss/api/in-memory/sign-document | POST |Enviar documento |
@@ -35,8 +34,6 @@ Además de poder consumir estos servicios operativos “completos”, se pueden 
 -Validar certicado (/pendiente).
 -Obtener la informacion de un cetificado (/certificate-information).
 
-
-## Servicios "Parciales" (Opcionales)
 |Recurso | Verbo |Descripción|
 | ------------- | ------------- |-------------|
 | https://gateway.dev.factura-e.cr/dss/api/in-memory/sign-document| POST |Firmar documento |
@@ -54,8 +51,6 @@ Los servicios utilitarios permiten consumir una variedad de funcionalidades las 
 -Actividades economicas
 -Tipos de documentos fiscales
 
-
-## Servicios "Utilitarios" (Opcionales)
 |Recurso | Verbo |Descripción|
 | ------------- | ------------- |-------------|
 | https://gateway.dev.factura-e.cr/catalog/api/exchange-request-current/318| GET |Obtener tipo de cambio |
