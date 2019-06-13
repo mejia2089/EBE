@@ -37,7 +37,8 @@ Los servicios utilitarios permiten consumir una variedad de funcionalidades las 
 ## Postman Collection
 Aca esta la colección en Postman para su uso, https://www.getpostman.com/collections/2f073a796fa4fd68a9f5.
 
-| First Header  | Second Header |
+## Ambientes
+|Recurso | Descripción |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| https://gateway.dev.factura-e.cr/catalog/api/  | Desarrollo / Pruebas  |
+| https://gateway.factura-e.cr/catalog/api/ | Producción  |
